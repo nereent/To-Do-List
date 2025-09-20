@@ -1,0 +1,247 @@
+@import url(./colors.css);
+
+@font-face {
+  font-family: 'Tagesschrift-Regular';
+  src: url(../font/font.css);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: var(--bg-color);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px;
+}
+
+.todo-container {
+  width: 400px;
+  background: var(--bg2-color);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+h2>span::after{
+  content: "  |";
+  text-align: center;
+  color: #333;
+  margin: 10px;
+  padding: 20px;
+  text-align: center;
+  font-family: 'Tagesschrift-Regular';
+  animation: nereen 4s infinite ;
+}
+@keyframes nereen {
+   0% {
+        content: "  |";
+    }
+
+    5% {
+        content: "  T|";
+    }
+
+    10% {
+        content: "  To|";
+    }
+
+    15% {
+        content: "  To D|";
+    }
+
+    20% {
+        content: "  To Do |";
+    }
+
+    25% {
+        content: "  To Do L|";
+    }
+
+    30% {
+        content: "  To Do Li|";
+    }
+
+    40% {
+        content: "  To Do Lis|";
+    }
+
+    45% {
+        content: "  To Do List|";
+    }
+
+    50% {
+        content: "  To Do List|";
+    }
+
+    60% {
+        content: "  To Do Lis";
+    }
+
+    65% {
+        content: "  To Do Li|";
+    }
+
+    70% {
+        content: "  To Do L|";
+    }
+
+    75% {
+        content: " To Do|";
+    }
+
+    80% {
+        content: "  To D";
+    }
+
+    85% {
+        content: "  To";
+    }
+
+    90% {
+        content: "  T";
+    }
+
+    95% {
+        content: " |";
+    }
+  }
+.input-area {
+  display: flex;
+  margin-bottom: 20px;
+  /* background-color: #28a745; */
+  padding: 5px;
+}
+input:focus + label 
+{
+  transform: translateY(-20px);
+}
+input:focus
+{
+  outline: var(--btn-color);
+}
+#task-input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid ;
+  border-radius: 8px 0 0 8px;
+  outline: none;
+}
+
+#add-btn {
+  padding: 10px 15px;
+  border: none;
+  background: var(--btn-color);
+  color: var(--sec-color);
+  cursor: pointer;
+  border-radius: 0 8px 8px 0;
+  transition: 0.2s;
+}
+
+#add-btn:hover {
+  background: #218838;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  background: #f9f9f9;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+li.completed span {
+  text-decoration: line-through;
+  color: #777;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+}
+
+button {
+  cursor: pointer;
+}
+
+.delete-btn {
+  background: crimson;
+  border: none;
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: 0.2s;
+}
+
+.delete-btn:hover {
+  background: darkred;
+}
+
+.edit-btn {
+  background: dodgerblue;
+  border: none;
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: 0.2s;
+}
+
+.edit-btn:hover {
+  background: royalblue;
+}
+
+.clear-btn {
+  margin-top: 15px;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  background: orange;
+  color: #fff;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+.clear-btn:hover {
+  background: darkorange;
+}
+
+.input-area {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: "Cairo", sans-serif;
+}
+
+.input-area label {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 0 5px;
+  color: #888;
+  pointer-events: none;
+  transition: 0.3s ease;
+}
+
+.input-area input:focus + label,
+.input-area input:not(:placeholder-shown) + label {
+  left: 8px;
+  font-size: 13px;
+  color: var(--btn-color, #007bff);
+}
